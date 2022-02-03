@@ -1,0 +1,141 @@
+* {
+  font-family: "Times New Roman", Times, serif;
+}
+.divHeader {
+  background: #e27d60;
+  index-z: 1;
+}
+ul {
+  list-style: none;
+  display: flex;
+  index-z: 1;
+  justify-content: space-around;
+}
+ul li a {
+  text-decoration: none;
+  index-z: 1;
+  color: #fff;
+  font-weight: bold;
+}
+
+ul li a:hover {
+  index-z: 1;
+  background-color: white;
+  color: black;
+}
+
+.active {
+  index-z: 1;
+  padding: 28px;
+  background-color: white;
+  color: black;
+}
+
+.nav-link:hover {
+  index-z: 1;
+  background: white;
+  color: black;
+  list-style: none;
+  padding: 28px;
+}
+.nav {
+  index-z: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 10vh;
+  background: #e27d60;
+}
+.nav-brand {
+  index-z: 1;
+  text-transform: uppercase;
+  justify-content: space-around;
+}
+
+.nav-menu {
+  index-z: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 3rem;
+  color: white;
+}
+.nav-toggler {
+  index-z: 1;
+  display: none;
+}
+.nav-toggler div {
+  index-z: 1;
+  width: 2.5rem;
+  height: 0.2rem;
+  margin: 0.4rem;
+  background: white;
+  transition: 0.3s ease-in;
+}
+@media screen and (max-width: 1280) {
+  .active {
+    index-z: 1;
+    padding: 28px;
+    background-color: white;
+  }
+  .nav-link:hover {
+    background: white;
+    list-style: none;
+    padding: 28px;
+    index-z: 1;
+  }
+}
+@media screen and (max-width: 768px) {
+  .nav-toggler {
+    index-z: 1;
+    display: block;
+    cursor: pointer;
+    index-z: 1;
+  }
+  .nav-menu {
+    index-z: 1;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 1vh;
+    height: 16vh;
+    width: 100vw;
+    background: #e27d60;
+    flex-direction: row;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: 0.5s ease-in;
+  }
+
+  .active {
+    index-z: 1;
+    padding: 28px;
+    background: #e27d60;
+    color: white;
+  }
+  .nav-link:hover {
+    index-z: 1;
+    background: #e27d60;
+    color: white;
+    list-style: none;
+    /* padding: 28px; */
+  }
+}
+
+.nav-active {
+  index-z: 1;
+  transform: translateX(0%);
+}
+
+.toggle .line1 {
+  index-z: 1;
+  transform: rotate(-45deg) translate(-4px, 5px);
+}
+.toggle .line2 {
+  index-z: 1;
+  opacity: 0;
+}
+.toggle .line3 {
+  index-z: 1;
+  transform: rotate(45deg) translate(-4px, -5px);
+}
