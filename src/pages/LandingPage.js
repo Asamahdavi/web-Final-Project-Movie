@@ -37,7 +37,7 @@ export default function LandingPage() {
   //get all movies from backend
   function getMovies() {
     axios
-      .get("http://localhost:8888/api/movie/read.php")
+      .get("http://localhost:8888/backend/api/movie/read.php")
       .then(function (response) {
         console.log(response.data);
         setmovie(response.data.data);

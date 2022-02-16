@@ -15,7 +15,7 @@ export default function MoviePage() {
   const getsingleMovie = useCallback(() => {
     console.log(id);
     axios
-      .get(`http://localhost:8888/api/movie/read_by_id.php?id=${id}`)
+      .get(`http://localhost:8888/backend/api/movie/read_by_id.php?id=${id}`)
       .then((response) => {
         console.log(response.data);
         setsingleMovie(response.data);

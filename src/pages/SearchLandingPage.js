@@ -19,7 +19,7 @@ export default function SearchLandingPage() {
   //connecting search backend
   useEffect(() => {
     axios
-      .get(`http://localhost:8888/api/movie/search.php?searchquery=${search}`)
+      .get(`http://localhost:8888/backend/api/movie/search.php?searchquery=${search}`)
       .then(function (response) {
         console.log(response.data);
         if(!isCalled){

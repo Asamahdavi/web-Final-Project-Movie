@@ -23,7 +23,7 @@ export default function AddMovieModal() {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post("http://localhost:8888/api/movie/create.php", inputs)
+      .post("http://localhost:8888/backend/api/movie/create.php", inputs)
       .then(function (response) {
         console.log(response.data);
         setIsOpen(false);

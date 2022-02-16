@@ -16,7 +16,7 @@ export default function DeletePopUp({id,handleDelete}) {
   
   const deleteMovie = (id) => {
     console.log(id);
-    axios.delete(`http://localhost:8888/api/movie/delete.php?id=${id}`).then(function(response){
+    axios.delete(`http://localhost:8888/backend/api/movie/delete.php?id=${id}`).then(function(response){
       if(response.status===200){
         handleDelete(id);
         setOpen(false);

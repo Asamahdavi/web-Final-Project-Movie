@@ -22,7 +22,7 @@ export default function UpdatePage() {
   }, []);
   //connect get movie by id from backend 
   function getMovie() {
-    axios.get(`http://localhost:8888/api/movie/read_by_id.php?id=${id}`).then(function (response) {
+    axios.get(`http://localhost:8888/backend/api/movie/read_by_id.php?id=${id}`).then(function (response) {
       console.log(response.data);
       setInputs(response.data);
     });
@@ -36,7 +36,7 @@ export default function UpdatePage() {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .put(`http://localhost:8888/api/movie/update.php`, inputs)
+      .put(`http://localhost:8888/backend/api/movie/update.php`, inputs)
       .then(function (response) {
         console.log(response.data);
         navigate("/");
