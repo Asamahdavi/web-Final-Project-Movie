@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import * as React from "react";
+// material ui as frontend library
 import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -9,6 +10,7 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Link } from "react-router-dom";
+import DeletePopUp from "./DeletePopUp";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -26,6 +28,7 @@ export default function List({
   movieDescription,
   movieDate,
   id,
+  handleDelete,
 }) {
   const [expanded, setExpanded] = React.useState(false);
 
@@ -50,7 +53,7 @@ export default function List({
           </ul>
         </div>
       </Link>
-      <div className="grid grid-cols-2 bg-teal-200">
+      <div className="grid grid-cols-2 bg-rose-200">
         <CardContent className="h-0">
           <Typography
             variant="body4"
@@ -73,22 +76,22 @@ export default function List({
         </CardActions>
       </div>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent className="bg-teal-200 grid grid-flow-col space-x-5 ">
+        <CardContent className="bg-rose-200 grid grid-flow-col space-x-5 ">
           <Typography paragraph>{movieDescription}</Typography>
-          <div className=" grid grid-flow-col pr-9">
-            
-            <img
-              className="w-10 cursor-pointer"
-              src="https://img.icons8.com/carbon-copy/100/fa314a/filled-trash.png"
-            />
-           
-            <Link to={`/update`}>
-               <img
-              className="w-9 cursor-pointer"
-              src="https://img.icons8.com/dotty/80/fa314a/edit-calendar.png"
-
-            />
-            </Link>
+          <div className="grid grid-cols-2 pl-36">
+            <div className="hover:cursor-pointer pt-2  ">
+              <Link to={`/movie/update/${id}`}>
+                <img
+                  className="w-11"
+                  src="https://img.icons8.com/dotty/80/26e07f/edit-calendar.png"
+                />
+              </Link>
+            </div>
+            <div className="w-3">
+              <div className="hover:cursor-pointer w-1 ">
+                <DeletePopUp id={id} handleDelete={handleDelete}/>
+              </div>
+            </div>
           </div>
         </CardContent>
       </Collapse>

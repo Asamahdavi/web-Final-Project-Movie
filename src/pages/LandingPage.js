@@ -1,32 +1,46 @@
 /* eslint-disable jsx-a11y/alt-text */
 import * as React from "react";
+import { useEffect, useState } from "react";
+//axios for connecting to the back
+import axios from "axios";
+//material ui as front library
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
-import GridView from "./GridView";
-import { useEffect, useState } from "react";
-import ListView from "./ListView";
-import axios from "axios";
-import Carousel from "./Carousel";
+//import components
+import GridView from "../components/GridView";
+import ListView from "../components/ListView";
+import Carousel from "../components/Carousel";
 
 export default function LandingPage() {
-  const [tasks, setTasks] = useState([]);
-  const [state, setState] = React.useState(false);
+  const [movie, setmovie] = useState([]);
+  const [state, setState] = React.useState(true);
+
+  // for delete the deleted data in satate
+  const handleDelete=(id)=>{
+
+   const index = movie.filter(iddata=>iddata.id !== id);
+ 
+   setmovie(index);
+
+  }
 
   const handleChange = (event) => {
     setState(event.target.checked);
   };
 
+  //useeffect for get all movies from back with every website refresh
   useEffect(() => {
-    getUsers();
+    getMovies();
   }, []);
 
-  function getUsers() {
+  //get all movies from backend
+  function getMovies() {
     axios
       .get("http://localhost:8888/api/movie/read.php")
       .then(function (response) {
         console.log(response.data);
-        setTasks(response.data.data);
+        setmovie(response.data.data);
       });
   }
 
@@ -34,11 +48,11 @@ export default function LandingPage() {
     <>
       <div className="z-0">
         <Carousel />
-        <FormGroup className="pl-20 w-40">
+        <FormGroup className="pl-20 w-60">
           <FormControlLabel
             control={
               <Switch
-                defaultChecked
+               // defaultChecked
                 checked={state}
                 onChange={handleChange}
                 value={state}
@@ -50,9 +64,9 @@ export default function LandingPage() {
         <div>
           <b>
             {state ? (
-              <GridView moviePoster={tasks} />
+              <GridView moviePoster={movie} handleDelete={handleDelete} />
             ) : (
-              <ListView moviePoster={tasks} />
+              <ListView moviePoster={movie} handleDelete={handleDelete} />
             )}
           </b>
         </div>

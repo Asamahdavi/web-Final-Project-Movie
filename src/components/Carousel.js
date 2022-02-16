@@ -1,8 +1,10 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { Component } from "react";
+//slider as front library
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+//import imges
 import i1 from "../img/1.jpg";
 import i2 from "../img/2.jpg";
 import i3 from "../img/3.jpg";

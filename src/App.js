@@ -8,12 +8,11 @@ import {
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import LandingPage from "./components/LandingPage";
-import MoviePage from "./components/MoviePage";
-import SearchLandingPage from "./components/SearchLandingPage";
+import LandingPage from "./pages/LandingPage";
+import MoviePage from "./pages/MoviePage";
+import SearchLandingPage from "./pages/SearchLandingPage";
+import UpdatePage from "./pages/UpdatePage";
 import "./App.css";
-import { Update } from "@mui/icons-material";
-import UpdatePage from "./components/UpdatePage";
 
 function App() {
   return (
@@ -24,7 +23,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<LandingPage />} />
           <Route exact path="/movie/details/:id" element={<MoviePage />} />
-          <Route exact path="/update" element={<UpdatePage/>}/>
+          <Route exact path="//movie/update/:id" element={<UpdatePage/>}/>
           <Route exact path="/movie/search/:search"element={<SearchLandingPage/>}/>
         </Routes>
 

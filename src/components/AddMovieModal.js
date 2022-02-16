@@ -1,28 +1,38 @@
 /* eslint-disable no-undef */
 import React, { useState } from "react";
 import Modal from "react-modal";
+//
 import axios from "axios";
+//import img for styling
 import pic from "../img/movies.jpg";
+//import css for styling
 import "../style/SignUpForm.css";
+//
 Modal.setAppElement("#root");
 
-export default function AddMovieModal({ addTask }) {
+export default function AddMovieModal() {
   const [inputs, setInputs] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+//change handler to add and then set items to inputs
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
     setInputs((values) => ({ ...values, [name]: value }));
   };
+  //connect create to backend 
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
       .post("http://localhost:8888/api/movie/create.php", inputs)
       .then(function (response) {
         console.log(response.data);
+        setIsOpen(false);
+        window.location.reload();
       });
   };
-  const [isOpen, setIsOpen] = useState(false);
 
+
+//open toggle
   function toggleModal() {
     setIsOpen(!isOpen);
   }
@@ -149,6 +159,7 @@ export default function AddMovieModal({ addTask }) {
               src={pic}
               style={{ backgroundPosition: "center" }}
               className="w-56 "
+              alt=""
             />
           </div>
         </div>

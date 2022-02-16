@@ -5,6 +5,7 @@
   background: #e27d60;
   index-z: 1;
 }
+
 ul {
   list-style: none;
   display: flex;
@@ -94,7 +95,7 @@ ul li a:hover {
   }
   .nav-menu {
     index-z: 1;
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     left: 1vh;
