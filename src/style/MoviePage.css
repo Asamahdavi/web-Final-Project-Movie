@@ -2,6 +2,18 @@ body {
   background: linear-gradient(135deg, white 30%, #41b3a3 100%);
   font-family: "work sans";
 }
+
+@media (max-width: 640px) {
+  .coreDiv iv {
+    width: 100%;
+    padding: 0;
+  }
+  .firstDiv {
+    background: none;
+    padding-left: 0;
+    width: 100%;
+  }
+}
 .form-container {
   margin: 30px auto;
   width: 1400px;

@@ -45,8 +45,8 @@ export default function UpdatePage() {
 
   return (
     <div>
-      <div className=" py-11  px-40  ">
-        <div className=" items-center rounded-3xl py-5 pl-52 pr-0  space-x-9 space-y-12 bg-rose-200 ">
+      <div className="coreDiv py-11   px-40 md:px-64 ">
+        <div className="firstDiv items-center  rounded-3xl py-5 pl-52 lg:pl-4 sm:pl-0 pr-0  space-x-9 space-y-12 bg-rose-200 ">
          
             <h3 className=" py-4 px-5 font-sans font-semibold text-teal-100 shadow-2xl w-40 rounded-full bg-rose-500">
               Update Movie
@@ -56,7 +56,7 @@ export default function UpdatePage() {
                 Ttile :
               </label>
               <input
-                className=" font-sans  sm:w-32 lg:w-72 text-rose-200 placeholder:text-rose-200  h-10 rounded-xl bg-cyan-800"
+                className="lg:w-52 font-sans  sm:w-32 xl:w-72 text-rose-200 placeholder:text-rose-200  h-10 rounded-xl bg-cyan-800"
                 type="text"
                 name="title"
                 placeholder=" Enter title"
@@ -69,7 +69,7 @@ export default function UpdatePage() {
                 Year :
               </label>
               <input
-                className="font-sans sm:w-32 text-rose-200 placeholder:text-rose-200  lg:w-72 h-10 rounded-xl bg-cyan-800 "
+                className=" lg:w-52 xl:w-72 font-sans  sm:w-32  text-rose-200 placeholder:text-rose-200   h-10 rounded-xl bg-cyan-800 "
                 type="text"
                 name="year"
                 placeholder=" Enter year"
@@ -85,7 +85,7 @@ export default function UpdatePage() {
                 color="black"
                 name="description"
                 rows={3}
-                className=" lg:w-72 sm:w-32 font-sans text-rose-200 placeholder:text-rose-200 rounded-xl bg-cyan-800"
+                className=" lg:w-52 xl:w-72 sm:w-32 font-sans text-rose-200 placeholder:text-rose-200 rounded-xl bg-cyan-800"
                 onChange={handleChange}
                 value={inputs.description}
               ></textarea>
@@ -100,11 +100,11 @@ export default function UpdatePage() {
                 rows={3}
                 onChange={handleChange}
                 value={inputs.poster}
-                className=" font-sans sm:w-32 lg:w-72 text-rose-200 placeholder:text-rose-200 rounded-xl bg-cyan-800"
+                className=" font-sans xl:w-72 lg:w-52 sm:w-32  text-rose-200 placeholder:text-rose-200 rounded-xl bg-cyan-800"
               ></textarea>
             </div>
             <div className="pl-40 pt-10">
-              <button onClick={handleSubmit} className="md:px-32 sm:px-11 bg-purple  text-cyan-100 py-2 text-sm font-semibold font-sans transition bg-rose-500 rounded-xl hover:bg-cyan-700 hover:text-white hover:shadow-sm hover:shadow-slate-400">
+              <button onClick={handleSubmit} className="md:px-8 xl:px-32  sm:px-11 bg-purple  text-cyan-100 py-2 text-sm font-semibold font-sans transition bg-rose-500 rounded-xl hover:bg-cyan-700 hover:text-white hover:shadow-sm hover:shadow-slate-400">
                 Update
               </button>
             </div>

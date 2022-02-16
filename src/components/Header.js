@@ -48,7 +48,7 @@ function Header() {
                 <div className=" grid grid-cols-2 pr-24">
                   
                   <input
-                    className="  shadow-neutral-700 shadow-2xl focus:outline-none text-cyan-900  md:w-36 sm:w-24 rounded-l-3xl h-10 placeholder:text-cyan-900 font-sans "
+                    className="  shadow-neutral-700 shadow-2xl focus:outline-none text-cyan-900  md:w-24 sm:w-24 rounded-l-3xl h-10 placeholder:text-cyan-900 font-sans "
                     type="text"
                     
                     name="search"
@@ -56,7 +56,7 @@ function Header() {
                     onChange={e => searchHandler(e.target.value)}
                     value={search}
                   />
-                  <a className=" w-9 rounded-r-3xl bg-white flex items-center justify-center   hover:bg-cyan-600 hover:w-9 " href={`/movie/search/${search}`}
+                  <a className=" w-9 rounded-r-3xl  bg-white flex items-center justify-center   hover:bg-cyan-600 hover:w-9 " href={`/movie/search/${search}`}
                    >
                   <img className="w-4" src="https://img.icons8.com/ios-filled/50/26e07f/search--v1.png" alt=""/>
                   </a>

@@ -4,6 +4,7 @@
 .divHeader {
   background: #e27d60;
   index-z: 1;
+  overflow: hidden;
 }
 
 ul {
