@@ -7,9 +7,13 @@ include_once '../../config/Database.php';
 include_once '../../models/Movie.php';
 
 // Instance database and connect
-$database = new Database();
-$db = $database->connect();
-
+try{
+    $database = new Database();
+    $db = $database->connect();
+    }catch (Exception  $e){
+        http_response_code(503);
+       echo  "database not connected"."<br>";
+       }
 // Instanciate Movie Object
 $movie = new Movie($db);
 

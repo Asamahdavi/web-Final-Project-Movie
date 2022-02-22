@@ -18,18 +18,24 @@
         // Get all movie records
         public function read() {
             // create query
+            try{
             $query = 'SELECT * from ' . $this->table . ' r';
             $stmt = $this->conn->prepare($query);
 
             // Execute query
             $stmt->execute();
-            //return query
             return $stmt;
+            }catch (Exception  $e){
+                 http_response_code(503);
+                echo  "Exception occurred"."<br>";
+                }
+            
         }
 
         // Get specific movie by id
         public function readById() {
             // create query
+           try{
             $query = 'SELECT * from ' . $this->table . ' ri where ri.id=? limit 0,1';
             $stmt = $this->conn->prepare($query);
 
@@ -49,11 +55,16 @@
             $this->poster = $row['poster'];
             //return
             return $stmt;
+        }catch (Exception  $e){
+            http_response_code(503);
+           echo  "Exception occurred"."<br>";
+           }
         }
 
         // Create The Movie
         public function create() {
             // create query
+            try{
             $query = 'insert into ' . $this->table . ' (title,description,year,poster) values(:title,:description,:year,:poster);';
 
             // Prepare statement
@@ -72,17 +83,18 @@
             $stmt->bindParam(':poster', $this->poster);
 
             // Execute query
-            if ($stmt->execute()) {
-                return true;
-            } else {
-                printf("Error: %s.\n", $stmt->error);
-                return false;
-            }
+            $stmt->execute();
+        }catch (Exception  $e){
+            http_response_code(503);
+           echo  "Exception occurred"."<br>";
+           }
+            
         }
 
         // Search Movies
         public function search() {
             // create query
+            try{
             $query = 'select * from ' . $this->table . ' where title=:title or year=:year';
 
             // Prepare statement
@@ -100,11 +112,16 @@
             $statement->execute();
 
             return $statement;
+        }catch (Exception  $e){
+            http_response_code(503);
+           echo  "Exception occurred"."<br>";
+           }
         }
 
 
         // Update Movie
         public function update(){
+            try{
             // create query
             $sql = 'update ' . $this->table . ' set title=:title, description=:description, year=:year, poster=:poster where id=:id;';
             $stmt = $this->conn->prepare($sql);
@@ -130,11 +147,16 @@
                 printf("Error: %s.\n", $stmt->error);
                 return false;
             }
+        }catch (Exception  $e){
+            http_response_code(503);
+           echo  "Exception occurred"."<br>";
+           }
 
         }
 
         // Delete Movies
         public function delete() {
+            try{
             // create query
             $query = 'DELETE FROM '.$this->table.' WHERE id=:id;';
             $stmt = $this->conn->prepare($query);
@@ -154,6 +176,10 @@
             echo json_encode($response);
 
             return $stmt;
+        }catch (Exception  $e){
+            http_response_code(503);
+           echo  "Exception occurred"."<br>";
+           }
         }
 
     }
