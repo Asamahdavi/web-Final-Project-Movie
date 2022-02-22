@@ -58,6 +58,7 @@ export default function UpdatePage() {
               <input
                 className="lg:w-52 font-sans  sm:w-32 xl:w-72 text-rose-200 placeholder:text-rose-200  h-10 rounded-xl bg-cyan-800"
                 type="text"
+                required
                 name="title"
                 placeholder=" Enter title"
                 value={inputs.title}
@@ -72,6 +73,7 @@ export default function UpdatePage() {
                 className=" lg:w-52 xl:w-72 font-sans  sm:w-32  text-rose-200 placeholder:text-rose-200   h-10 rounded-xl bg-cyan-800 "
                 type="text"
                 name="year"
+                required
                 placeholder=" Enter year"
                 onChange={handleChange}
                 value={inputs.year}
@@ -85,6 +87,7 @@ export default function UpdatePage() {
                 color="black"
                 name="description"
                 rows={3}
+                required
                 className=" lg:w-52 xl:w-72 sm:w-32 font-sans text-rose-200 placeholder:text-rose-200 rounded-xl bg-cyan-800"
                 onChange={handleChange}
                 value={inputs.description}
@@ -98,6 +101,7 @@ export default function UpdatePage() {
                 color="black"
                 name="poster"
                 rows={3}
+                required
                 onChange={handleChange}
                 value={inputs.poster}
                 className=" font-sans xl:w-72 lg:w-52 sm:w-32  text-rose-200 placeholder:text-rose-200 rounded-xl bg-cyan-800"

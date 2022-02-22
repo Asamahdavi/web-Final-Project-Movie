@@ -11,13 +11,18 @@ import "../style/MoviePage.css";
 export default function MoviePage() {
   const { id } = useParams();
   const [singleMovie, setsingleMovie] = useState(null);
+  const [isCalled,setIsCalled]= useState(false);
 //
   const getsingleMovie =(() => {
     axios
       .get(`http://localhost:8888/backend/api/movie/read_by_id.php?id=${id}`)
       .then((response) => {
         console.log(response.data);
-        setsingleMovie(response.data);
+        if(!isCalled){
+         setsingleMovie(response.data); 
+         setIsCalled(true);
+        }
+        
       });
   });
 

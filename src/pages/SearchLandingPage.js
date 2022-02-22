@@ -44,7 +44,7 @@ export default function SearchLandingPage() {
         <FormControlLabel
           control={
             <Switch
-            //  defaultChecked
+            
               checked={state}
               onChange={handleChange}
               value={state}

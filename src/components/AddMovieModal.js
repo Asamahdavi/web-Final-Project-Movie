@@ -114,6 +114,7 @@ export default function AddMovieModal() {
                 className=" font-sans  sm:w-32 lg:w-72 text-white placeholder:text-white  h-10 rounded-2xl bg-red-400"
                 type="text"
                 name="title"
+                required
                 placeholder=" Enter title"
                 onChange={handleChange}
               />
@@ -124,6 +125,7 @@ export default function AddMovieModal() {
                 className="font-sans sm:w-32 text-white placeholder:text-white  lg:w-72 h-10 rounded-2xl bg-red-400 "
                 type="text"
                 name="year"
+                required
                 placeholder=" Enter year"
                 onChange={handleChange}
               />
@@ -134,6 +136,7 @@ export default function AddMovieModal() {
                 color="black"
                 name="description"
                 rows={1}
+                required
                 className=" lg:w-72 sm:w-32 font-sans text-white rounded-2xl bg-red-400"
                 onChange={handleChange}
               ></textarea>
@@ -144,6 +147,7 @@ export default function AddMovieModal() {
                 color="black"
                 name="poster"
                 rows={1}
+                required
                 className=" font-sans sm:w-32 lg:w-72 placeholder:text-white text-white rounded-2xl bg-red-400"
                 onChange={handleChange}
               ></textarea>
