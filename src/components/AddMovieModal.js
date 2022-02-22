@@ -6,7 +6,7 @@ import axios from "axios";
 //import img for styling
 import pic from "../img/movies.jpg";
 //import css for styling
-import "../style/SignUpForm.css";
+import "../style/Form.css";
 //
 Modal.setAppElement("#root");
 

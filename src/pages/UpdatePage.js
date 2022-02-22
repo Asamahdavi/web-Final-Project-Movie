@@ -6,7 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 //axios for connecting to the back
 import axios from "axios";
 //imported styles
-import "../style/SignUpForm.css";
+import "../style/Form.css";
 import "../style/MoviePage.css";
 
 
