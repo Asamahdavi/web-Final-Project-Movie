@@ -45,7 +45,7 @@ export default function UpdatePage() {
 
   return (
     <div>
-      <div className="coreDiv py-11   px-40 md:px-64 ">
+      <div className="coreDiv py-11  px-40 md:px-64 ">
         <div className="firstDiv items-center  rounded-3xl py-5 pl-52 lg:pl-4 sm:pl-0 pr-0  space-x-9 space-y-12 bg-rose-200 ">
          
             <h3 className=" py-4 px-5 font-sans font-semibold text-teal-100 shadow-2xl w-40 rounded-full bg-rose-500">

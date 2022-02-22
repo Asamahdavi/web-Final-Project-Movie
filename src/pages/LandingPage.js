@@ -18,11 +18,8 @@ export default function LandingPage() {
 
   // for delete the deleted data in satate
   const handleDelete=(id)=>{
-
    const index = movie.filter(iddata=>iddata.id !== id);
- 
    setmovie(index);
-
   }
 
   const handleChange = (event) => {

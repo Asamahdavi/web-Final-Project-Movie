@@ -1,6 +1,7 @@
 //material ui or material design as front library
 import { FormControlLabel, FormGroup, Switch } from "@mui/material";
 import { useEffect, useState } from "react";
+import Header from "../components/Carousel";
 //axios for connecting to the backend
 import axios from "axios";
 //useprams for access the parameters of the current route
@@ -35,6 +36,10 @@ export default function SearchLandingPage() {
   };
   return (
     <>
+    <div>
+    {movies[0] ? (
+    <div>
+
       <FormGroup className="pl-20 w-40">
         <FormControlLabel
           control={
@@ -56,6 +61,12 @@ export default function SearchLandingPage() {
             <ListView moviePoster={movies} />
           )}
         </b>
+      </div>    
+    </div>): ( <div className="px-96 py-40">
+        <div className="p-16 text-center font-semibold text-3xl text-rose-500 bg-cyan-100 rounded-full">
+                Not Found !!!
+          </div>
+      </div> )}
       </div>
     </>
   );
