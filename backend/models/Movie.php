@@ -95,15 +95,14 @@
         public function search() {
             // create query
             try{
-            $query = 'select * from ' . $this->table . ' where title=:title or year=:year';
-
+            $query = 'select * from ' . $this->table . ' where title=Searchtitle or year=Searchyear';
             // Prepare statement
             $statement = $this->conn->prepare($query);
 
             // Bind the data
             if (isset($this->searchQuery)) {
-                $statement->bindParam(':title', $this->searchQuery);
-                $statement->bindParam(':year', $this->searchQuery);
+                $statement->bindParam('Searchtitle', $this->searchQuery);
+                $statement->bindParam('Searchyear', $this->searchQuery);
             } else {
                 $query = 'select * from ' . $this->table;
             }
@@ -169,7 +168,7 @@
 
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
             return $stmt;
-        }catch (Exception  $e){
+            }catch (Exception  $e){
             http_response_code(503);
            echo  "Exception occurred"."<br>";
            }

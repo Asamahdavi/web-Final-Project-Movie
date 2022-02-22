@@ -18,6 +18,7 @@ try{
 $movie = new Movie($db);
 
 // Get query from the URL
+
 $movie->searchQuery = isset($_GET['searchquery']) ? $_GET['searchquery'] : die();
 
 // Movie query
