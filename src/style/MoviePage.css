@@ -16,7 +16,7 @@ body {
 }
 .form-container {
   margin: 30px auto;
-  width: 1400px;
+  width: 1000px;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
   position: relative;
   border-radius: 10px;
@@ -33,7 +33,7 @@ body {
 .form-img {
   width: 100px;
   height: 600px;
-  position: absolute;
+  position: center;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

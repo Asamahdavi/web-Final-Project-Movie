@@ -51,9 +51,9 @@ export default function MoviePage() {
                 </div>
               </form>
             </div>
-            <div className="form-content-left">
+            <div className="form-content-left h-full ">
               <CardMedia
-                className=" form-img rounded-r-md"
+                className=" form-img rounded-r-md h-full "
                 component="img"
                 image={singleMovie && singleMovie.poster}
                 alt="Paella dish"
