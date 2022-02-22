@@ -85,7 +85,7 @@
             // Execute query
             $stmt->execute();
         }catch (Exception  $e){
-            http_response_code(503);
+            http_response_code(400);
            echo  "Exception occurred"."<br>";
            }
             
@@ -148,7 +148,7 @@
                 return false;
             }
         }catch (Exception  $e){
-            http_response_code(503);
+            http_response_code(400);
            echo  "Exception occurred"."<br>";
            }
 
@@ -168,13 +168,6 @@
             $stmt->execute();
 
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
-            if($stmt->execute()) {
-                $response = ['status' => 1, 'message' => 'Record deleted successfully.'];
-            } else {
-                $response = ['status' => 0, 'message' => 'Failed to delete record.'];
-            }
-            echo json_encode($response);
-
             return $stmt;
         }catch (Exception  $e){
             http_response_code(503);
